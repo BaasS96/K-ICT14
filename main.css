@@ -12,9 +12,11 @@ html {
     display: block;
     position: sticky;
     align-items: center;
-    width: 100%;
     background-color: #FFFFFF;
     top: 0;
+    z-index: 100;
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
 
 .title {
@@ -27,7 +29,10 @@ html {
 }
 
 .title-text {
+    display: block;
     font-size: 4em;
+    padding-left: 10vw;
+    padding-right: 10vw;
 }
 
 .header-menu {
@@ -48,78 +53,38 @@ html {
 .header-menu-list li {
     float: left;
     padding: 1em;
-    transition: background-color .5s;
+    transition: background-color .5s cubic-bezier(0.4, 0.0, 0.2, 1), color .25s cubic-bezier(0.4, 0.0, 0.2, 1);
+    margin-left: 0.15em;
+    margin-right: 0.15em;
 }
 
 .header-menu-list li:hover {
-    background-color: #AFAFAF;
+    background-color: #707070;
+    color: #FFFFFF;
 }
 
-.holder {
+.header-menu-list a {
+    text-decoration: none;
+}
+
+.header-menu-list li:active {
+    background-color: #353535;
+}
+
+.footer {
+    display: block;
+    width: 100%;
+    background-color: #909090;
+    margin-bottom: 0;
+    padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.footer p {
+    margin-top: .4em;
+    margin-bottom: .4em;
+    font-size: .9em;
     padding-left: 10vw;
     padding-right: 10vw;
-    padding-top: 5vh;
-    padding-bottom: 5vh;
-}
-
-.flex-container {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-    align-content: flex-end;
-}
-
-.flex-column {
-    flex: 0 0 33.33%;
-}
-
-.flex-card {
-    background-color: #FFFFFF;
-    margin-bottom: 5px;
-    margin-left: 5px;
-    position: relative;
-    overflow: hidden;
-}
-
-.flex-card-overlay {
-    display: block;
-    position: absolute;
-    z-index: 2;
-    width: 100%;
-    height: 100%;
-}
-
-.flex-card-overlay p {
-    display: inline-block;
-    background-color: #e6e4e2;
-    position: relative;
-    transform: translate(-100%, 0);
-    transition: transform .5s, opacity .5s;
-    backface-visibility: hidden;
-    opacity: 0;
-    vertical-align: text-bottom;
-    padding-left: 1em;
-    padding-right: 1em;
-    padding-top: 0.5em;
-    padding-bottom: 0.5em;
-    font-size: 1.1em;
-}
-
-.flex-card-overlay:hover p {
-    transform: translate(0, 0);
-    opacity: 100;
-}
-
-.flex-card-overlay:hover+img {
-    filter: opacity(50%);
-    transform: scale(1.1, 1.1);
-}
-
-.flex-card-image {
-    position: relative;
-    width: 100%;
-    transition: filter .5s, transform .5s;
+    color: #FFFFFF;
 }
